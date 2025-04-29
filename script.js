@@ -2,11 +2,7 @@
   'header',
   'main',
   'footer'
-].forEach(sem => {
-  const script = document.createElement('script');
-  script.src = `/components/${sem}/script.js`;
-  document.head.appendChild(script);
-
+].forEach(async sem => {
   const tag = document.querySelector(`${sem}`);
   
   fetch(`/components/${sem}/index.html`)
@@ -18,6 +14,10 @@
       link.rel = 'stylesheet'; 
       link.href = `/components/${sem}/style.css`;
       document.head.appendChild(link);
+
+      const script = document.createElement('script');
+      script.src = `/components/${sem}/script.js`;
+      document.head.appendChild(script);
     })
     .catch(error => {
       console.error('Error loading footer:', error);

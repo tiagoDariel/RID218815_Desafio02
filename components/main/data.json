@@ -1,0 +1,19 @@
+{
+    "posts":[
+        {
+            "title": "Desevolvimento atual",
+            "date": "22 Agosto 2022",
+            "img": "/assets/images/develop.jpg"
+        },
+        {
+            "title": "GitLab vs GitHub",
+            "date": "22 Agosto 2022",
+            "img": "/assets/images/gitLab.jpg"
+        },
+        {
+            "title": "Café atrapalha?",
+            "date": "22 Agosto 2022",
+            "img": "/assets/images/coffee.jpg"
+        }
+    ]
+}
