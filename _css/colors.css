@@ -1,0 +1,6 @@
+:root {
+    --color-primary: #02A28F;
+    --color-span: #616161;
+    --default-color: black;
+    --shandow-default: 0px 10px 10px 0 rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,23 @@
+.content {
+    margin-top: 38px;
+}
+
+.content .content__box {
+  background-color: #F9F9F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 12px 0;
+}
+
+.content .content__box .content__box-good-developer {
+  width: 774px;
+  height: 396px;
+  background-image: linear-gradient(transparent, transparent, rgb(0, 0, 0)), url("/assets/images/city.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: self-end;
+  color: #fff;
+  padding: 24px;
+}

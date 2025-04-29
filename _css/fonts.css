@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Signature';
+  src: url('../assets/fonts/Inter/League_Script/LeagueScript-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Inter/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
