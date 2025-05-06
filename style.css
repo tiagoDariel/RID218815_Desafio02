@@ -5,10 +5,13 @@
 
 #app {
     font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
 }
 
 .container {
-    padding: 0 155px;
     width: inherit;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
