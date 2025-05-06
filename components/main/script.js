@@ -1,6 +1,6 @@
 const directory = './components/main/';
 
-const components = ['CardPopularPosts', 'CardRecentPosts']
+const components = ['CardPopularPosts', 'CardRecentPosts', 'Categories']
 
 let data = {}
 
@@ -30,6 +30,8 @@ const loadPages = () => {
             return fetch(`${directory}components/${html}.html`)
                 .then(response => response.text())
                 .then(data => {
+                    if(!data) return;
+
                     tag.innerHTML = data;
                 });
         })
@@ -71,7 +73,7 @@ const loadRecentPosts = () => new Promise((resolve, reject) => {
                 <img src="${post.img}" alt="Tiago Dariel" class="recent-cards__image-img">
             </div>
             <div class="recent-cards__content">
-                <div class="recent-cards__content-slug">${post.slug}</div>
+                <div class="recent-cards__content-categories">${post.categories}</div>
                 <div class="recent-cards__content-title">${post.title}</div>
                 <div class="recent-cards__content-author"><strong>By</strong> ${post.author}</div>
                 <div class="recent-cards__content-description">${post.description}</div>
@@ -84,12 +86,62 @@ const loadRecentPosts = () => new Promise((resolve, reject) => {
     resolve();
 })
 
+const loadCategories = () => new Promise((resolve, reject) => {
+    console.log('Loading categories...')
+    const tagCategories = document.getElementById('categories');
+
+    const countCategories = data.recent.reduce((acc, post) => {
+        const categories = post.categories;
+        acc['Todos'] = (acc['Todos'] || 0) + 1;
+        acc[categories] = (acc[categories] || 0) + 1;
+        return acc;
+    }, {});
+    
+    Object.entries(countCategories).forEach(([category, total]) => {
+        const categoryTag = document.createElement('div');
+        categoryTag.className = 'categories__item';
+        categoryTag.innerHTML = `
+            <div class="category" style="cursor: pointer;" onClick="filter('${category}')"> <span> > ${category}</span><span>(${total})</span></div>
+        `;
+        tagCategories.appendChild(categoryTag);
+    })
+    
+    resolve();
+})
+
+const filter = (category) => {
+    const tagRecent = document.getElementById('card-recent-posts');
+
+    tagRecent.innerHTML = '';
+
+    data.recent.forEach((post) => {
+        if(post.categories === category || category === 'Todos') {
+            const postTag = document.createElement('div');
+            postTag.className = 'recent-cards';
+            postTag.innerHTML = `
+                <div class="recent-cards__image">
+                    <img src="${post.img}" alt="Tiago Dariel" class="recent-cards__image-img">
+                </div>
+                <div class="recent-cards__content">
+                    <div class="recent-cards__content-categories">${post.categories}</div>
+                    <div class="recent-cards__content-title">${post.title}</div>
+                    <div class="recent-cards__content-author"><strong>By</strong> ${post.author}</div>
+                    <div class="recent-cards__content-description">${post.description}</div>
+                    <div class="recent-cards__content-date">${post.created_at}</div>
+                </div>
+            `;
+            tagRecent.appendChild(postTag);
+        }
+    })
+}
+
 
 const load = async () => {
     try {
         await loadPages();
         await loadPopularPosts();
         await loadRecentPosts();
+        await loadCategories();
     } catch (error) {
         console.error("Erro ao carregar:", error);
     }

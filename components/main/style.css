@@ -142,3 +142,13 @@
     position: absolute;
     bottom: 54%;
 }
+
+.card .categories__item .category{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-span);
+    margin: 14px 0;
+}

@@ -23,7 +23,7 @@
             "created_at": "22 Agosto 2022",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus, sit amet ipsum faucibus vestibulum. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa.",
             "img": "/assets/images/mobile.jpg",
-            "slug": "Desenvolvimento"
+            "categories": "Desenvolvimento"
         },
         {
             "title": "Balancear vida profissional e pessoal",
@@ -31,7 +31,7 @@
             "created_at": "22 Agosto 2022",
             "description": "Lorem ipsum dolor sit amet consectetur. Et consectetur at consectetur sed nisl tempor.",
             "img": "/assets/images/balancear.jpg",
-            "slug": "Saúde"
+            "categories": "Saúde"
         },
         {
             "title": "Configurando VSCode",
@@ -39,7 +39,7 @@
             "created_at": "22 Agosto 2022",
             "description": "Lorem ipsum dolor sit amet consectetur. Erat interdum tortor ac sagittis id a etiam. Tellus vitae arcu dignissim massa aliquam vel tellus. Ipsum massa arcu nulla sed purus in ac.", 
             "img": "/assets/images/code.jpg",
-            "slug": "Desenvolvimento"
+            "categories": "Desenvolvimento"
         },
         {
             "title": "2 monitores ou 1 ultrawide?",
@@ -47,7 +47,7 @@
             "created_at": "22 Agosto 2022",
             "description": "Lorem ipsum dolor sit amet consectetur. Arcu tellus adipiscing sagittis tristique. Eget molestie posuere enim pretium venenatis nunc ligula donec a. Velit senectus amet nulla.", 
             "img": "/assets/images/monitores.jpg",
-            "slug": "Produtividade"
+            "categories": "Produtividade"
         }
         
     ]
