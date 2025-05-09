@@ -48,7 +48,8 @@ const loadPopularPosts = () => new Promise((resolve, reject) => {
 
     // Cria elementos de post para cada item em 'data.popular'
     data.popular.forEach((post) => {
-        const postTag = document.createElement('div');
+        const postTag = document.createElement('a');
+        postTag.href = '#'; // Define o link para a página do post
         postTag.className = 'post-cards';
         postTag.innerHTML = `
             <div class="post-cards__img">
@@ -71,7 +72,8 @@ const loadRecentPosts = () => new Promise((resolve, reject) => {
     const tagRecent = document.getElementById('card-recent-posts'); // Seleciona a seção de posts recentes
 
     data.recent.forEach((post) => {
-        const postTag = document.createElement('div');
+        const postTag = document.createElement('a');
+        postTag.href = '#'; // Define o link para a página do post
         postTag.className = 'recent-cards border-radius';
         postTag.innerHTML = `
             <div class="recent-cards__image">
@@ -106,7 +108,7 @@ const loadCategories = () => new Promise((resolve, reject) => {
     
     // Cria os elementos de categoria no DOM
     Object.entries(countCategories).forEach(([category, total]) => {
-        const categoryTag = document.createElement('div');
+        const categoryTag = document.createElement('a');
         categoryTag.className = 'categories__item';
         categoryTag.innerHTML = `
             <div class="category" style="cursor: pointer;" onClick="filter('${category}')"> <span> > ${category}</span><span>(${total})</span></div>
@@ -125,7 +127,8 @@ const filter = (category) => {
     // Reinsere somente os posts da categoria escolhida (ou todos)
     data.recent.forEach((post) => {
         if(post.categories === category || category === 'Todos') {
-            const postTag = document.createElement('div');
+            const postTag = document.createElement('a');
+            postTag.href = '#'; // Define o link para a página do post
             postTag.className = 'recent-cards';
             postTag.innerHTML = `
                 <div class="recent-cards__image">

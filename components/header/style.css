@@ -22,6 +22,7 @@
 
 @media (max-width: 840px) {
     .header .header__title {
+      font-size: 20px;
       width: 100%;
     }
 

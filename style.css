@@ -30,3 +30,7 @@ header {
 .border-radius {
     border-radius: .4rem;
 }
+
+a {
+    text-decoration: none;
+}
