@@ -58,4 +58,4 @@ http://127.0.0.1:5500/
 
 # visualização do projeto
 
-https://tiago-dariel-dnc.netlify.app/
+https://tiago-dariel-desafio2.netlify.app/
