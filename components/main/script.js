@@ -48,7 +48,7 @@ const loadPopularPosts = () => new Promise((resolve, reject) => {
         postTag.className = 'post-cards';
         postTag.innerHTML = `
             <div class="post-cards__img">
-                <img src="${post.img}" alt="${post.title}">
+                <img class="border-radius" src="${post.img}" alt="${post.title}">
             </div>
             <div class="post-cards__content">    
                 <h5 class="post-cards__content-title">${post.title}</h5>
@@ -67,7 +67,7 @@ const loadRecentPosts = () => new Promise((resolve, reject) => {
 
     data.recent.forEach((post) => {
         const postTag = document.createElement('div');
-        postTag.className = 'recent-cards';
+        postTag.className = 'recent-cards border-radius';
         postTag.innerHTML = `
             <div class="recent-cards__image">
                 <img src="${post.img}" alt="Tiago Dariel" class="recent-cards__image-img">
